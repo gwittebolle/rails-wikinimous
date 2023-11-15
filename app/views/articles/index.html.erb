@@ -1,0 +1,8 @@
+<div class="container p-3">
+<article>
+  <% @articles.each do |article| %>
+    <h2><%= link_to article.title, article_path(article), class: "article a"%></h2>
+    <%=article.content%>
+  <% end %>
+</article>
+</div>

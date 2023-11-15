@@ -1,0 +1,22 @@
+<!-- app/views/articles/show.html.erb -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <article>
+        <h1><%= @article.title %>
+        <small>
+        <%= link_to '', edit_article_path, class:"fa fa-pencil"  %>
+        <%= link_to '', article_path(@article),
+          data: {turbo_method: :delete, turbo_confirm: "Delete #{@article.title}?"}, class:"fa fa-trash"
+        %>
+        </small>
+        </h1>
+        <p><%= @article.content %></p>
+      </article>
+      <p>
+      <%= link_to "Back to list", articles_path %>
+      </p>
+    </div>
+  </div>
+</div>
